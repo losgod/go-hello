@@ -5,7 +5,7 @@ pipeline {
     stages {
         stage('UnitTest') {
             steps {
-                sh "pwd"
+                sh "./rununittest.sh"
                 junit '*.xml'
                 script {
                     if( currentBuild.result == 'FAILURE' ) {
