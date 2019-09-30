@@ -2,7 +2,7 @@ FROM golang:1.11.0
 WORKDIR /go/src/gowebdemo/
 ENV GOPROXY=https://goproxy.io GO111MODULE=on
 COPY app.go .
-RUN CGO_ENABLED=0 GOOS=linux go build -a -installsuffix cgo -o gowebdemo .
+RUN CGO_ENABLED=0 GOOS=linux go build -a -installsuffix cgo -o gowebdemo app.go
 
 FROM alpine:latest
 RUN apk --no-cache add ca-certificates
