@@ -1,7 +1,6 @@
 FROM golang:1.11.0
 WORKDIR /go/src/gowebdemo/
 ENV GOPROXY=https://goproxy.io GO111MODULE=on
-RUN go get -d -v golang.org/x/net/html
 COPY app.go .
 RUN CGO_ENABLED=0 GOOS=linux go build -a -installsuffix cgo -o gowebdemo .
 
