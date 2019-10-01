@@ -9,6 +9,6 @@ fi
 # run a new app instance
 docker run -d \
     -p 8088:8088 \
+    --rm
     --name nickwebdemo \
-    --restart=always \
     gowebdemo
